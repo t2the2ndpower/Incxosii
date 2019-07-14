@@ -3,6 +3,13 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+
+### Django ###
+*.log
+*.pot
+*.pyc
+local_settings.py
+
 # C extensions
 *.so
 
