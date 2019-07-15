@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <h3>This is the course detail template</h3>
+    <div class="card">
+        <div class="card-body">
+            <blockquote class="blockquote">
+                <h2>{{ object.course_title }}</h2>
+                <p>{{ object.course_description }}</p>
+                <p>created: {{ object.course_created_date }}</p>
+                <div>
+                    <thead>
+                        <h2>Assignment Name, Assignment Description</h2>
+                    </thead>
+                    <tr>
+                         <!-- This section is causing the base.html to render a second time on the page.  WHY -->
+                        {% block assignments %}
+                        {% include 'course_assignments_list.html' %}
+                        {% endblock %}
+                    </tr>
+
+                </div>
+
+            </blockquote>
+        </div>
+    </div>
+
+</div>
+</div>
+
+{% endblock %}
