@@ -16,9 +16,26 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+# Api imports
+# from rest_framework import routers
+from targets import views
+
+# Template imports
+from django.views.generic.base import TemplateView
+
+# Views import
+from targets.views import target_view, target_detail_view, target_assignment_view, index_view
+
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', admin.site.urls),
-    path('accounts/', include('accounts.urls')),
+    # path('', admin.site.urls),
     path('accounts/', include('django.contrib.auth.urls')),
+    # path('', TemplateView.as_view(template_name='home.html'), name='home'),
+    path('', index_view),
+    path('targets/', target_view),
+    path('target/detail/<int:id>/', target_detail_view),
+    path('target/detail/assignments', target_assignment_view),
+
+
 ]
