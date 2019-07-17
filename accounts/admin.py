@@ -14,7 +14,7 @@ class IncxosiiUserAdmin(admin.ModelAdmin):
     list_display = ['user_name', 'user_cell', 'user_email']
 
 
-class IncxosiiCourseAdmin(admin.ModelAdmin):
+class IncxosiiTargetAdmin(admin.ModelAdmin):
     list_display = ['target_title', 'target_created_date', 'target_ownerID']
 
 
@@ -35,7 +35,7 @@ class IncxosiiAssignmentAdmin(admin.ModelAdmin):
 
 
 # admin.site.register(IncxosiiUserAdmin)
-admin.site.register(Target, IncxosiiCourseAdmin)
+admin.site.register(Target, IncxosiiTargetAdmin)
 admin.site.register(Target_Assignment, IncxosiiAssignmentAdmin)
 
 

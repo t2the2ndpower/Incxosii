@@ -1,5 +1,5 @@
 <!-- This page, while it does NOT extend base.html, causes base.html to render twice when the course detail route/page is served, WHY!!! -->
-{% extends 'course_detail.html' %}
+{% extends 'target_detail.html' %}
 
 {% block content %}
 
@@ -7,6 +7,7 @@
 <ul id="assignments">
     {% for instance in object_list %}
 
+    <!-- The URL below does not go to the assignments detail html page, HELP -->
     <li>
         <h3><a href="{{ instance.get_absolute_url }}">Assignment Name: {{instance.assignment_name}}</h3></a>
         <p>Assignment Description: {{instance.assignment_description}}</p>

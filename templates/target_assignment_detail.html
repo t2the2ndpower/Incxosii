@@ -2,7 +2,7 @@
 
 {% block content %}
 <div class="container">
-    <h3>This is the "Target" detail template</h3>
+    <h3>This is the "Target Assignment" detail template</h3>
     <div class="card">
         <div class="card-body">
             <blockquote class="blockquote">
@@ -11,13 +11,12 @@
                 <p>created: {{ object.target_created_date }}</p>
                 <div>
                     <thead>
-                        <h2>Assignment Name, Assignment Description</h2>
+                        <h2>Activity Title, Activity Description</h2>
                     </thead>
                     <tr>
                          <!-- This section is causing the base.html to render a second time on the page.  WHY -->
-                        {% block assignments %}
-                        {% include 'target_assignments_list.html' %}
-                        {% endblock %}
+                         <!-- This section should also show all the activity and communication related to a specific assignment -->
+
                     </tr>
 
                 </div>

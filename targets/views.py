@@ -49,6 +49,18 @@ def target_assignment_view(request, *args, **kwargs):
     return render(request, "target_assignments_list.html", context)
 
 
+def target_assignment_detail_view(request, *args, **kwargs):
+    # obj = Course.objects.get(id=id)
+    queryset = Target_Assignment.objects.get(id=1)
+
+    context = {
+        # 'object': obj,
+        'object_list': queryset,
+    }
+
+    return render(request, "target_assignment_detail.html", context)
+
+
 class UserViewSet(viewsets.ModelViewSet):
     # """
     # API endpoint that allows users to be viewed or edited.

@@ -2,7 +2,7 @@
 
 {% block content %}
 <div class="container">
-    <h2>This is the courses.html template</h2>
+    <h2>This is the targets.html template</h2>
 
 
 
@@ -10,8 +10,8 @@
     <ul>
         {% for instance in object_list %}
 
-        <li><h3><a href = "{{ instance.get_absolute_url }}">{{instance.course_title}}</h3></a>
-            <p>Course Description: {{instance.course_description}}</p>
+        <li><h3><a href = "{{ instance.get_absolute_url }}">{{instance.target_title}}</h3></a>
+            <p>Target Description: {{instance.target_description}}</p>
         </li>
 
         {% endfor %}
