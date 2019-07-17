@@ -33,6 +33,7 @@ urlpatterns = [
     path('accounts/', include('django.contrib.auth.urls')),
     # path('', TemplateView.as_view(template_name='home.html'), name='home'),
     path('', index_view),
+    path('incxosii_api/', include('targets.urls')),
     path('targets/', target_view),
     path('target/detail/<int:id>/', target_detail_view),
     path('target/detail/assignments', target_assignment_view),

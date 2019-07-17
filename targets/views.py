@@ -4,7 +4,7 @@ from django.shortcuts import render
 # Api imports
 from django.contrib.auth.models import User, Group
 from rest_framework import viewsets
-# from inkosi2_dpa.serializers import UserSerializer, GroupSerializer, CoursesSerializer, CourseAssignmentSerializer
+from targets.serializers import UserSerializer, GroupSerializer, TargetsSerializer, TargetAssignmentSerializer
 # model imports
 from .models import Target, Target_Assignment
 # # from django.http import HttpResponse
@@ -47,3 +47,30 @@ def target_assignment_view(request, *args, **kwargs):
     }
 
     return render(request, "target_assignments_list.html", context)
+
+
+class UserViewSet(viewsets.ModelViewSet):
+    # """
+    # API endpoint that allows users to be viewed or edited.
+    # """
+    queryset = User.objects.all().order_by('-date_joined')
+    serializer_class = UserSerializer
+
+
+class GroupViewSet(viewsets.ModelViewSet):
+    # """
+    # API endpoint that allows groups to be viewed or edited.
+    # """
+    queryset = Group.objects.all()
+    serializer_class = GroupSerializer
+
+
+class TargetViewSet(viewsets.ModelViewSet):
+    queryset = Target.objects.all()
+    serializer_class = TargetsSerializer
+
+
+class TargetAssignmentViewSet(viewsets.ModelViewSet):
+    queryset = Target_Assignment.objects.all()
+    serializer_class = TargetAssignmentSerializer
+
