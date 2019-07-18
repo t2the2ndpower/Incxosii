@@ -46,9 +46,12 @@ INSTALLED_APPS = [
     'targets',
     'accounts.apps.AccountsConfig',
     'rest_framework',
+    'corsheaders', # new
 ]
 
 MIDDLEWARE = [    
+    'corsheaders.middleware.CorsMiddleware', # new
+    'django.middleware.common.CommonMiddleware', # new
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -162,3 +165,8 @@ REST_FRAMEWORK = {
 
 django_heroku.settings(locals())
 del DATABASES['default']['OPTIONS']['sslmode']
+
+CORS_ORIGIN_WHITELIST = (
+    'https://localhost:3000',
+    'https://localhost:8000',
+)
