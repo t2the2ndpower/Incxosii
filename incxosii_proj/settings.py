@@ -46,7 +46,6 @@ INSTALLED_APPS = [
     'targets',
     'accounts.apps.AccountsConfig',
     'rest_framework',
-    #'send',
 ]
 
 MIDDLEWARE = [    

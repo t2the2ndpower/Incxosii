@@ -18,7 +18,7 @@ class Target(models.Model):
 
 @deconstructible
 class Target_Assignment(models.Model):
-    related_targetID = models.ForeignKey(Target, on_delete=models.CASCADE)   
+    related_targetID = models.ForeignKey(Target, related_name='assignments', on_delete=models.CASCADE)   
     target_assignmentID = models.IntegerField(auto_created=True, unique=True)    
     assignment_name = models.CharField(max_length=80, blank=False)
     assignment_number = models.IntegerField(auto_created=True)

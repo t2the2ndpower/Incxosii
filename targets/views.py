@@ -36,13 +36,21 @@ def target_view(request, *args, **kwargs):
     return render(request, "targets.html", context)
 
 
-def target_detail_view(request, *args, **kwargs):
-    obj = Target.objects.get(id=1)
+def target_detail_view(request, target_id):
+    # print('target_id', request.GET.get('target_id'))
+    obj = Target.objects.get(id=target_id)
+    # objs = Target_Assignment.objects.get(ids=target_assignment_id)
+    #queryset = Target_Assignment.objects.all()
+    queryset = Target_Assignment.objects.filter(related_targetID = target_id)
+
+
 
     context = {
         'object': obj,
+        #'objects': objs,
+        'objects_list': queryset,
     }
-
+    print(queryset)
     return render(request, "target_detail.html", context)
 
 
@@ -134,7 +142,7 @@ def Create_Target_View(request):
 
 @login_required(login_url='/accounts/login/')
 def Send_Assign_Target_View(request):
-    
+
     send_mail(
         'You have just been assigned a Target to shoot for!',
         'Technoladie just assigned a Target to you, please login to the Incxosii Mastery App to manage your Target based assignments!',

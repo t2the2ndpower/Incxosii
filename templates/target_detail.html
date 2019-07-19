@@ -9,15 +9,23 @@
                 <h2>{{ object.target_title }}</h2>
                 <p>{{ object.target_description }}</p>
                 <p>created: {{ object.target_created_date }}</p>
+                <p>created by: {{ object.target_ownerID }}</p>
                 <div>
                     <thead>
-                        <h2>Assignment Name, Assignment Description</h2>
+                        <h2>Related Assignments</h2>
                     </thead>
                     <tr>
-                         <!-- This section is causing the base.html to render a second time on the page.  WHY -->
-                        {% block assignments %}
-                        {% include 'target_assignments_list.html' %}
-                        {% endblock %}
+                       
+                         {% for instance in objects_list %}
+
+                         <li><h3><a href = "{{ instance.get_absolute_url }}">{{instance.assignment_name}}</h3></a>
+                             <p>Assignment Description: {{instance.assignment_description}}</p>
+                         </li>
+                 
+                         {% endfor %}
+
+
+
                     </tr>
 
                 </div>
