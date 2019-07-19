@@ -182,5 +182,83 @@
             "assignment_created_date": "2018-10-12",
             "assignment_created_by": 2
         }
+    },
+
+
+
+
+    {
+        "model": "targets.rTarget_Assigned_To",
+        "pk": 1,
+        "fields":{
+            "recordID": 1,
+            "related_targetID": 1,
+            "target_completion_date": "2019-11-15",
+            "target_signup_date": "2019-03-15",
+            "assigned_to_user": 1
+        }
+    },
+    {
+        "model": "targets.rTarget_Assigned_To",
+        "pk": 2,
+        "fields":{
+            "recordID": 2,
+            "related_targetID": 1,
+            "target_completion_date": "2019-11-15",
+            "target_signup_date": "2019-05-01",
+            "assigned_to_user": 2
+        }
+    },
+    {
+        "model": "targets.rTarget_Assigned_To",
+        "pk": 3,
+        "fields":{
+            "recordID": 3,
+            "related_targetID": 2,
+            "target_completion_date": "2019-11-15",
+            "target_signup_date": "2019-05-01",
+            "assigned_to_user": 1
+        }
+    },
+    {
+        "model": "targets.rTarget_Assignments_Relationships",
+        "pk": 1,
+        "fields":{
+            "recordID": 1,
+            "related_target_assignmentID": 1,
+            "assignment_due_date": "2019-05-03",
+            "assignment_start_date": "2019-05-02",
+            "assignment_assigned_to_user": 2
+        }
+    },
+    {
+        "model": "targets.rTarget_Assignments_Relationships",
+        "pk": 2,
+        "fields":{
+            "recordID": 2,
+            "related_target_assignmentID": 2,
+            "assignment_due_date": "2019-11-15",
+            "assignment_start_date": "2019-05-04",
+            "assignment_assigned_to_user": 2
+        }
+    },
+
+
+
+
+
+
+    {
+        "model": "targets.rAssignment_Activity_Relationships",
+        "pk": 1,
+        "fields":{
+            "recordID": 1,
+            "activity_create_date": "2019-11-15",
+            "rTarget_Assignment_RelationshipID": 1,
+            "activity_created_by": 2,
+            "activity_type": "email",
+            "activity_description": "A Lot of words go here.  This is where communications bewtween master and seeker occur."
+        }
     }
+    
 ]

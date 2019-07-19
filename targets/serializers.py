@@ -1,6 +1,6 @@
 from rest_framework import serializers
 from django.contrib.auth.models import User, Group
-from .models import Target, Target_Assignment
+from .models import Target, Target_Assignment, rTarget_Assignments_Relationships, rTarget_Assigned_To, rAssignment_Activity_Relationships
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
@@ -40,4 +40,43 @@ class TargetAssignmentSerializer(serializers.HyperlinkedModelSerializer):
             'assignment_due_date',
             'assignment_created_date',
             'assignment_created_by'
+        )
+
+
+class rTarget_Assigned_ToSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = rTarget_Assigned_To
+        fields = (
+            'recordID',
+            'related_targetID',
+            'url',
+            'assigned_to_user',
+            'target_signup_date',
+            'target_completion_date',
+            )
+
+
+class rTarget_Assignments_RelationshipsSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = rTarget_Assignments_Relationships
+        fields = (
+            'recordID',
+            'related_target_assignmentID',
+            'url',
+            'assignment_assigned_to_user',
+            'assignment_start_date',
+            'assignment_due_date',
+            )
+
+
+class rAssignment_Activity_RelationshipsSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = rAssignment_Activity_Relationships
+        fields = (
+            'recordID',
+            'rTarget_Assignment_RelationshipID',
+            'activity_create_date',
+            'activity_created_by',
+            'activity_type',
+            'activity_description'
         )
