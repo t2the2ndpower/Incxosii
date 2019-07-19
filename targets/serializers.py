@@ -47,12 +47,11 @@ class rTarget_Assigned_ToSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = rTarget_Assigned_To
         fields = (
-            'recordID',
             'related_targetID',
             'url',
             'assigned_to_user',
             'target_signup_date',
-            'target_completion_date',
+            'target_completion_date'
             )
 
 
@@ -60,12 +59,11 @@ class rTarget_Assignments_RelationshipsSerializer(serializers.HyperlinkedModelSe
     class Meta:
         model = rTarget_Assignments_Relationships
         fields = (
-            'recordID',
             'related_target_assignmentID',
             'url',
             'assignment_assigned_to_user',
             'assignment_start_date',
-            'assignment_due_date',
+            'assignment_due_date'
             )
 
 
@@ -73,7 +71,6 @@ class rAssignment_Activity_RelationshipsSerializer(serializers.HyperlinkedModelS
     class Meta:
         model = rAssignment_Activity_Relationships
         fields = (
-            'recordID',
             'rTarget_Assignment_RelationshipID',
             'activity_create_date',
             'activity_created_by',

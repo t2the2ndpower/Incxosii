@@ -2,7 +2,7 @@
     {
         "model": "targets.Target",
         "pk": 1,
-        "fields":{
+        "fields": {
             "targetID": 1,
             "target_title": "Great target Number 1",
             "target_description": "Greate target Description for target Number 1",
@@ -13,7 +13,7 @@
     {
         "model": "targets.Target",
         "pk": 2,
-        "fields":{
+        "fields": {
             "targetID": 2,
             "target_title": "Great target Number 2",
             "target_description": "Greate target Description for target Number 2",
@@ -24,7 +24,7 @@
     {
         "model": "targets.Target",
         "pk": 3,
-        "fields":{
+        "fields": {
             "targetID": 3,
             "target_title": "Great target Number 3",
             "target_description": "Greate target Description for target Number 3",
@@ -35,7 +35,7 @@
     {
         "model": "targets.Target",
         "pk": 4,
-        "fields":{
+        "fields": {
             "targetID": 4,
             "target_title": "Great target Number 4",
             "target_description": "Greate target Description for target Number 4",
@@ -46,7 +46,7 @@
     {
         "model": "targets.Target",
         "pk": 5,
-        "fields":{
+        "fields": {
             "targetID": 5,
             "target_title": "Great target Number 5",
             "target_description": "Greate target Description for target Number 5",
@@ -54,17 +54,12 @@
             "target_created_date": "2018-10-12"
         }
     },
-
-
-
-
-
     {
         "model": "targets.Target_Assignment",
         "pk": 1,
-        "fields":{
-            "related_targetID": 1,    
-            "target_assignmentID": 1,   
+        "fields": {
+            "related_targetID": 1,
+            "target_assignmentID": 1,
             "assignment_name": "Great target 1 Assignment number 1!",
             "assignment_number": 1,
             "assignment_description": "Great target 1 Assignment number 1 awesome description!",
@@ -72,12 +67,13 @@
             "assignment_created_date": "2018-10-12",
             "assignment_created_by": 1
         }
-    },{
+    },
+    {
         "model": "targets.Target_Assignment",
         "pk": 2,
-        "fields":{
-            "related_targetID": 1,    
-            "target_assignmentID": 2,   
+        "fields": {
+            "related_targetID": 1,
+            "target_assignmentID": 2,
             "assignment_name": "Great target 1 Assignment number 2!",
             "assignment_number": 1,
             "assignment_description": "Great target 1 Assignment number 2 awesome description!",
@@ -89,9 +85,9 @@
     {
         "model": "targets.Target_Assignment",
         "pk": 3,
-        "fields":{
-            "related_targetID": 1,    
-            "target_assignmentID": 3,   
+        "fields": {
+            "related_targetID": 1,
+            "target_assignmentID": 3,
             "assignment_name": "Great target 1 Assignment number 3!",
             "assignment_number": 3,
             "assignment_description": "Great target 1 Assignment number 3 awesome description!",
@@ -103,9 +99,9 @@
     {
         "model": "targets.Target_Assignment",
         "pk": 4,
-        "fields":{
-            "related_targetID": 2,    
-            "target_assignmentID": 4,   
+        "fields": {
+            "related_targetID": 2,
+            "target_assignmentID": 4,
             "assignment_name": "Great target 2 Assignment number 1!",
             "assignment_number": 1,
             "assignment_description": "Great target 2 Assignment number 1 awesome description!",
@@ -113,12 +109,13 @@
             "assignment_created_date": "2018-10-12",
             "assignment_created_by": 1
         }
-    },{
+    },
+    {
         "model": "targets.Target_Assignment",
         "pk": 5,
-        "fields":{
-            "related_targetID": 2,    
-            "target_assignmentID": 5,   
+        "fields": {
+            "related_targetID": 2,
+            "target_assignmentID": 5,
             "assignment_name": "Great target 2 Assignment number 2!",
             "assignment_number": 1,
             "assignment_description": "Great target 2 Assignment number 2 awesome description!",
@@ -130,9 +127,9 @@
     {
         "model": "targets.Target_Assignment",
         "pk": 6,
-        "fields":{
-            "related_targetID": 2,    
-            "target_assignmentID": 6,   
+        "fields": {
+            "related_targetID": 2,
+            "target_assignmentID": 6,
             "assignment_name": "Great target 2 Assignment number 3!",
             "assignment_number": 3,
             "assignment_description": "Great target 2 Assignment number 3 awesome description!",
@@ -144,9 +141,9 @@
     {
         "model": "targets.Target_Assignment",
         "pk": 7,
-        "fields":{
-            "related_targetID": 3,    
-            "target_assignmentID": 7,   
+        "fields": {
+            "related_targetID": 3,
+            "target_assignmentID": 7,
             "assignment_name": "Great target 3 Assignment number 1!",
             "assignment_number": 1,
             "assignment_description": "Great target 3 Assignment number 1 awesome description!",
@@ -158,9 +155,9 @@
     {
         "model": "targets.Target_Assignment",
         "pk": 8,
-        "fields":{
-            "related_targetID": 3,    
-            "target_assignmentID": 8,   
+        "fields": {
+            "related_targetID": 3,
+            "target_assignmentID": 8,
             "assignment_name": "Great target 3 Assignment number 2!",
             "assignment_number": 1,
             "assignment_description": "Great target 3 Assignment number 2 awesome description!",
@@ -172,9 +169,9 @@
     {
         "model": "targets.Target_Assignment",
         "pk": 9,
-        "fields":{
-            "related_targetID": 3,    
-            "target_assignmentID": 9,   
+        "fields": {
+            "related_targetID": 3,
+            "target_assignmentID": 9,
             "assignment_name": "Great target 3 Assignment number 3!",
             "assignment_number": 3,
             "assignment_description": "Great target 3 Assignment number 3 awesome description!",
@@ -183,15 +180,10 @@
             "assignment_created_by": 2
         }
     },
-
-
-
-
     {
         "model": "targets.rTarget_Assigned_To",
         "pk": 1,
-        "fields":{
-            "recordID": 1,
+        "fields": {
             "related_targetID": 1,
             "target_completion_date": "2019-11-15",
             "target_signup_date": "2019-03-15",
@@ -201,8 +193,7 @@
     {
         "model": "targets.rTarget_Assigned_To",
         "pk": 2,
-        "fields":{
-            "recordID": 2,
+        "fields": {
             "related_targetID": 1,
             "target_completion_date": "2019-11-15",
             "target_signup_date": "2019-05-01",
@@ -212,8 +203,7 @@
     {
         "model": "targets.rTarget_Assigned_To",
         "pk": 3,
-        "fields":{
-            "recordID": 3,
+        "fields": {
             "related_targetID": 2,
             "target_completion_date": "2019-11-15",
             "target_signup_date": "2019-05-01",
@@ -223,8 +213,7 @@
     {
         "model": "targets.rTarget_Assignments_Relationships",
         "pk": 1,
-        "fields":{
-            "recordID": 1,
+        "fields": {
             "related_target_assignmentID": 1,
             "assignment_due_date": "2019-05-03",
             "assignment_start_date": "2019-05-02",
@@ -234,31 +223,22 @@
     {
         "model": "targets.rTarget_Assignments_Relationships",
         "pk": 2,
-        "fields":{
-            "recordID": 2,
+        "fields": {
             "related_target_assignmentID": 2,
             "assignment_due_date": "2019-11-15",
             "assignment_start_date": "2019-05-04",
             "assignment_assigned_to_user": 2
         }
     },
-
-
-
-
-
-
     {
         "model": "targets.rAssignment_Activity_Relationships",
         "pk": 1,
-        "fields":{
-            "recordID": 1,
-            "activity_create_date": "2019-11-15",
+        "fields": {
             "rTarget_Assignment_RelationshipID": 1,
+            "activity_create_date": "2019-11-15",
             "activity_created_by": 2,
             "activity_type": "email",
             "activity_description": "A Lot of words go here.  This is where communications bewtween master and seeker occur."
         }
     }
-    
 ]

@@ -33,7 +33,6 @@ class Target_Assignment(models.Model):
 
 @deconstructible
 class rTarget_Assigned_To(models.Model):
-    recordID = models.IntegerField(auto_created=True, unique=True)
     related_targetID = models.ForeignKey(Target, on_delete=models.CASCADE)   
     target_completion_date = models.DateField(blank=True)
     target_signup_date = models.DateField(auto_now_add=True)
@@ -45,7 +44,6 @@ class rTarget_Assigned_To(models.Model):
 
 @deconstructible
 class rTarget_Assignments_Relationships(models.Model):
-    recordID = models.IntegerField(auto_created=True, unique=True)
     related_target_assignmentID = models.ForeignKey(Target_Assignment, on_delete=models.CASCADE)   
     assignment_due_date = models.DateField(blank=True)
     assignment_start_date = models.DateField(auto_now_add=True)
@@ -57,11 +55,10 @@ class rTarget_Assignments_Relationships(models.Model):
 
 @deconstructible
 class rAssignment_Activity_Relationships(models.Model):
-    recordID = models.IntegerField(auto_created=True, unique=True)
     rTarget_Assignment_RelationshipID = models.ForeignKey(rTarget_Assignments_Relationships, on_delete=models.CASCADE)
     activity_create_date = models.DateField(auto_now_add=True)
     activity_created_by = models.ForeignKey('auth.User', related_name='rAssignment_Activity_Relationships', on_delete=models.CASCADE)
-    activity_type = models.CharField(max_length=20, blank=False)
+    activity_type = models.CharField(max_length=30, blank=False)
     activity_description = models.CharField(max_length=10000, blank=False)
 
     def get_absolute_url(self):

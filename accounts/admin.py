@@ -23,15 +23,15 @@ class IncxosiiAssignmentAdmin(admin.ModelAdmin):
 
 
 class IncxosiirTarget_Assignments_RelationshipsAdmin(admin.ModelAdmin):
-    list_display = ['recordID','related_target_assignmentID', 'assignment_assigned_to_user', 'assignment_start_date', 'assignment_due_date']
+    list_display = ['related_target_assignmentID', 'assignment_assigned_to_user', 'assignment_start_date', 'assignment_due_date']
 
 
 class IncxosiirTarget_Assigned_ToAdmin(admin.ModelAdmin):
-    list_display = ['recordID','related_targetID', 'assigned_to_user', 'target_signup_date', 'target_completion_date']
+    list_display = ['related_targetID', 'assigned_to_user', 'target_signup_date', 'target_completion_date']
 
 
 class IncxosiirAssignment_Activity_RelationshipsAdmin(admin.ModelAdmin):
-    list_display = ['recordID', 'rTarget_Assignment_RelationshipID', 'activity_create_date', 'activity_created_by', 'activity_type', 'activity_description']
+    list_display = [ 'rTarget_Assignment_RelationshipID', 'activity_create_date', 'activity_created_by', 'activity_type', 'activity_description']
 
 
 admin.site.register(Target, IncxosiiTargetAdmin)
