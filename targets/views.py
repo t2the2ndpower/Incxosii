@@ -126,15 +126,19 @@ def Create_Target_View(request):
     context = {
         'form': form
     }
-    return render(request, 'targets.html', context)
+    return render(request, 'create_target.html', context)
 
-# class Create_Target_View(TemplateView):
-#     template_name = 'target/create_target.html'
-
-#     def get(self, request):
-#         form = Create_Target_Form
-
-#         return render(request, self.template_name, {'form': form})
+@login_required(login_url='/accounts/login/')
+def Create_Assignments_View(request):
+    form = Create_Assignment_Form(request.POST or None)
+    if form.is_valid():
+        form.save()
+        form = Create_Assignment_Form()
+        
+    context = {
+        'form': form
+    }
+    return render(request, 'create_assignments.html', context)
 
 
 

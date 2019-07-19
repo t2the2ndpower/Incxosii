@@ -15,7 +15,7 @@ class IncxosiiUserAdmin(admin.ModelAdmin):
 
 
 class IncxosiiTargetAdmin(admin.ModelAdmin):
-    list_display = ['target_title', 'target_created_date', 'target_ownerID']
+    list_display = ['target_title', 'target_created_date', 'target_ownerID', 'targetID']
 
 
 class IncxosiiAssignmentAdmin(admin.ModelAdmin):
