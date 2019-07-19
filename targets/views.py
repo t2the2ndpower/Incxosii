@@ -1,14 +1,20 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 from django.shortcuts import render
+from django.views.generic import TemplateView
+from django.contrib.auth.decorators import login_required
+
 # Api imports
 from django.contrib.auth.models import User, Group
 from rest_framework import viewsets
 from targets.serializers import UserSerializer, GroupSerializer, TargetsSerializer, TargetAssignmentSerializer, rTarget_Assignments_RelationshipsSerializer, rTarget_Assigned_ToSerializer, rAssignment_Activity_RelationshipsSerializer
+
 # model imports
 from targets.models import Target, Target_Assignment, rTarget_Assigned_To, rTarget_Assignments_Relationships, rAssignment_Activity_Relationships
 # # from django.http import HttpResponse
-# from .forms import target_form, assignment_form
+
+# Forms import
+from .forms import Create_Target_Form, Create_Assignment_Form
 
 # Create your views here.
 
@@ -95,6 +101,29 @@ def rAssignment_Activity_Relationships_view(request, *args, **kwargs):
     }
 
     return render(request, "rAssignment_Activity_Relationships.html", context)
+
+
+# Django Form Views
+
+@login_required(login_url='/accounts/login/')
+def Create_Target_View(request):
+    form = Create_Target_Form(request.POST or None)
+    if form.is_valid():
+        form.save()
+        form = Create_Target_Form()
+        
+    context = {
+        'form': form
+    }
+    return render(request, 'targets.html', context)
+
+# class Create_Target_View(TemplateView):
+#     template_name = 'target/create_target.html'
+
+#     def get(self, request):
+#         form = Create_Target_Form
+
+#         return render(request, self.template_name, {'form': form})
 
 
 

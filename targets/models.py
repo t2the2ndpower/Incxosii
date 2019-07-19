@@ -23,6 +23,7 @@ class Target_Assignment(models.Model):
     assignment_name = models.CharField(max_length=80, blank=False)
     assignment_number = models.IntegerField(auto_created=True)
     assignment_description = models.CharField(max_length=10000, blank=False)
+    #assignment_duration = models.DurationField(default=24)
     assignment_due_date = models.DateField()
     assignment_created_date = models.DateField(auto_now_add=True)
     assignment_created_by = models.ForeignKey('auth.User', related_name='Target_Assignment', on_delete=models.CASCADE)
@@ -58,7 +59,7 @@ class rAssignment_Activity_Relationships(models.Model):
     rTarget_Assignment_RelationshipID = models.ForeignKey(rTarget_Assignments_Relationships, on_delete=models.CASCADE)
     activity_create_date = models.DateField(auto_now_add=True)
     activity_created_by = models.ForeignKey('auth.User', related_name='rAssignment_Activity_Relationships', on_delete=models.CASCADE)
-    activity_type = models.CharField(max_length=30, blank=False)
+    activity_type = models.CharField(max_length=20, blank=False)
     activity_description = models.CharField(max_length=10000, blank=False)
 
     def get_absolute_url(self):
