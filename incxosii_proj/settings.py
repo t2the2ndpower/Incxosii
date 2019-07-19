@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'targets',
     'accounts.apps.AccountsConfig',
     'rest_framework',
+    #'send',
 ]
 
 MIDDLEWARE = [    
@@ -122,6 +123,7 @@ EMAIL_USE_TLS = True
 EMAIL_PORT = 587
 EMAIL_HOST_USER = 'idsg3.test@gmail.com'
 EMAIL_HOST_PASSWORD = '1234qwerASDF!'
+#EMAIL_USE_SSL = False
 
 
 # Internationalization

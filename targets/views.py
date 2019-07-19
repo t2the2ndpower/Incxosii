@@ -16,6 +16,9 @@ from targets.models import Target, Target_Assignment, rTarget_Assigned_To, rTarg
 # Forms import
 from .forms import Create_Target_Form, Create_Assignment_Form
 
+# Email imports
+from django.core.mail import send_mail
+
 # Create your views here.
 
 def index_view(request, *args, **kwargs):
@@ -126,6 +129,20 @@ def Create_Target_View(request):
 #         return render(request, self.template_name, {'form': form})
 
 
+
+# SEND EMAIL VIEWS
+
+@login_required(login_url='/accounts/login/')
+def Send_Assign_Target_View(request):
+    
+    send_mail(
+        'You have just been assigned a Target to shoot for!',
+        'Technoladie just assigned a Target to you, please login to the Incxosii Mastery App to manage your Target based assignments!',
+        'idsg3.test@gmail.com',
+        ['technoladie@gmail.com'],
+        fail_silently=False
+         )
+    return render(request, 'send/assign_target_comm.html')
 
 
 

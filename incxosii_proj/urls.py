@@ -24,7 +24,7 @@ from targets import views
 from django.views.generic.base import TemplateView
 
 # Views import
-from targets.views import target_view, target_detail_view, target_assignment_view, index_view, target_assignment_detail_view, Create_Target_View
+from targets.views import target_view, target_detail_view, target_assignment_view, index_view, target_assignment_detail_view, Create_Target_View, Send_Assign_Target_View
 
 
 urlpatterns = [
@@ -38,7 +38,8 @@ urlpatterns = [
     path('target/detail/<int:id>/', target_detail_view),
     path('target/detail/assignments', target_assignment_view),
     path('target_assignment/detail/<int:id>/', target_assignment_detail_view),
-    path('target/create/', Create_Target_View)
+    path('target/create/', Create_Target_View),
+    path('target_assigned_to/send', Send_Assign_Target_View),
 
 
 ]
