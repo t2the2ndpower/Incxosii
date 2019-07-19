@@ -2,7 +2,8 @@
 
 {% block content %}
 <div class="container">
-    <h2>This is the targets.html template</h2>
+    <h2><i>select your destiny!</i></h2>
+    <p>This is the targets.html template</p>
 
 
 
@@ -11,7 +12,7 @@
         {% for instance in object_list %}
 
         <li><h3><a href = "{{ instance.get_absolute_url }}">{{instance.target_title}}</h3></a>
-            <p>Target Description: {{instance.target_description}}</p>
+            <p id = 'target_description'>{{instance.target_description}}</p>
         </li>
 
         {% endfor %}

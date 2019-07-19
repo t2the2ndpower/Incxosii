@@ -1,8 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="container">
-    <h3>This is the "Target" detail template</h3>
+<div id='target_detail' class="container">
     <div class="card">
         <div class="card-body">
             <blockquote class="blockquote">
@@ -10,31 +9,27 @@
                 <p>{{ object.target_description }}</p>
                 <p>created: {{ object.target_created_date }}</p>
                 <p>created by: {{ object.target_ownerID }}</p>
-                <div>
-                    <thead>
-                        <h2>Related Assignments</h2>
-                    </thead>
-                    <tr>
-                       
-                         {% for instance in objects_list %}
-
-                         <li><h3><a href = "{{ instance.get_absolute_url }}">{{instance.assignment_name}}</h3></a>
-                             <p>Assignment Description: {{instance.assignment_description}}</p>
-                         </li>
-                 
-                         {% endfor %}
-
-
-
-                    </tr>
-
-                </div>
-
+                <button>Click to Join!</button>
             </blockquote>
         </div>
     </div>
 
+    <h2>Related Assignments</h2>
+    <div id='target_detail' class="container">
+
+        {% for instance in objects_list %}
+
+        <li>
+            <h3><a href="{{ instance.get_absolute_url }}">{{instance.assignment_name}}</h3></a>
+            <p>Assignment Description: {{instance.assignment_description}}</p>
+        </li>
+
+        {% endfor %}
+
+
+    </div>
+
 </div>
-</div>
+
 
 {% endblock %}
