@@ -11,8 +11,14 @@
     <ul>
         {% for instance in object_list %}
 
-        <li><h3><a href = "{{ instance.get_absolute_url }}">{{instance.target_title}}</h3></a>
+        <li>
+
+
+            <h3><a href = "{{ instance.get_absolute_url }}">{{instance.target_title}}</h3></a>
             <p id = 'target_description'>{{instance.target_description}}</p>
+
+
+
         </li>
 
         {% endfor %}

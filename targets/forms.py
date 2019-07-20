@@ -27,7 +27,8 @@ class Create_Target_Form(forms.ModelForm):
             'target_title',
             'target_description',
             'targetID',
-            'target_ownerID'
+            'target_ownerID',
+            'target_image'
         ]
 
 

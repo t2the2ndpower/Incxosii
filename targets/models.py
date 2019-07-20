@@ -10,7 +10,8 @@ class Target(models.Model):
     target_title = models.CharField(max_length=80, blank=False)
     target_description = models.CharField(max_length=10000, blank=False)
     target_ownerID = models.ForeignKey('auth.User', related_name='Target', on_delete=models.CASCADE)
-    target_created_date = models.DateField(auto_now_add=True) 
+    target_created_date = models.DateField(auto_now_add=True)
+    target_image = models.ImageField(upload_to='uploads')
 
     def get_absolute_url(self):
         return f"/target/detail/{self.id}/"

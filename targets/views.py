@@ -46,13 +46,13 @@ def target_detail_view(request, target_id):
 
 
 
-    context = {
+    RequestContext = {
         'object': obj,
         #'objects': objs,
         'objects_list': queryset,
     }
     print(queryset)
-    return render(request, "target_detail.html", context)
+    return render(request, "target_detail.html", RequestContext)
 
 
 def target_assignment_view(request, *args, **kwargs):

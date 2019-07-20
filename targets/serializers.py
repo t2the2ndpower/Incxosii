@@ -23,7 +23,8 @@ class TargetsSerializer(serializers.HyperlinkedModelSerializer):
             'target_title',
             'target_description',
             'target_ownerID',
-            'target_created_date'
+            'target_created_date',
+            'target_image'
             )
 
 
