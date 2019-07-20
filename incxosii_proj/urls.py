@@ -40,7 +40,7 @@ urlpatterns = [
     path('target/detail/<int:target_id>/', target_detail_view),
     #path('target/detail/', target_detail_view),
     path('target/detail/assignments', target_assignment_view),
-    path('target_assignment/detail/<int:id>/', target_assignment_detail_view),
+    path('target_assignment/detail/<int:target_assignment_id>/', target_assignment_detail_view),
     path('target/create/', Create_Target_View),
     path('target_assignment/create/', Create_Assignments_View),
     path('target_assigned_to/send', Send_Assign_Target_View),

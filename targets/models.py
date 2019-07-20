@@ -30,7 +30,7 @@ class Target_Assignment(models.Model):
     assignment_created_by = models.ForeignKey('auth.User', related_name='Target_Assignment', on_delete=models.CASCADE)
 
     def get_absolute_url(self):
-        return f"/target_assignment/details{self.id}/"
+        return f"/target_assignment/detail/{self.id}/"
 
 
 @deconstructible

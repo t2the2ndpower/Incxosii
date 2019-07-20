@@ -67,16 +67,15 @@ def target_assignment_view(request, *args, **kwargs):
     return render(request, "target_assignments_list.html", context)
 
 
-def target_assignment_detail_view(request, *args, **kwargs):
-    # obj = Course.objects.get(id=id)
-    queryset = Target_Assignment.objects.get(id=1)
+def target_assignment_detail_view(request, target_assignment_id):
+    obj = Target_Assignment.objects.get(id=target_assignment_id)
+    
+    RequestContext = {
+        'object': obj,
 
-    context = {
-        # 'object': obj,
-        'object_list': queryset,
     }
-
-    return render(request, "target_assignment_detail.html", context)
+    print(obj)
+    return render(request, "target_assignment_detail.html", RequestContext)
 
 
 def rTarget_Assigned_To_view(request, *args, **kwargs):

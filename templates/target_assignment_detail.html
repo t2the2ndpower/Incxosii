@@ -2,26 +2,24 @@
 
 {% block content %}
 <div class="container">
-    <h3>This is the "Target Assignment" detail template</h3>
+    <h3>{{ object.related_targetID.target_title }}</h3>
+    <p>Assignment Number {{ object.assignment_number }}</p>
+    <!-- <h3>This is the "Target Assignment" detail template</h3> -->
     <div class="card">
         <div class="card-body">
             <blockquote class="blockquote">
-                <h2>{{ object.target_title }}</h2>
-                <p>{{ object.target_description }}</p>
-                <p>created: {{ object.target_created_date }}</p>
+                <h2>{{ object.assignment_name }}</h2>
+                <p>{{ object.assignment_description }}</p>
+                <p>assigned by: {{ object.assignment_created_by }}</p>
                 <div>
-                    <thead>
-                        <h2>Activity Title, Activity Description</h2>
-                    </thead>
-                    <tr>
-                         <!-- This section is causing the base.html to render a second time on the page.  WHY -->
-                         <!-- This section should also show all the activity and communication related to a specific assignment -->
+                    <h4>Click Done once you have completed this assignment.  Remember this should take you 20min. or less</h4>
+                    <button type='button'>DONE!</button>
 
-                    </tr>
 
                 </div>
 
             </blockquote>
+            <a href='/targets/'>Return to Target List</a>
         </div>
     </div>
 
