@@ -15,6 +15,7 @@ from targets.models import Target, Target_Assignment, rTarget_Assigned_To, rTarg
 
 # Forms import
 from .forms import Create_Target_Form, Create_Assignment_Form
+from django.http import HttpResponseRedirect
 
 # Email imports
 from django.core.mail import send_mail
@@ -121,7 +122,8 @@ def Create_Target_View(request):
     form = Create_Target_Form(request.POST or None)
     if form.is_valid():
         form.save()
-        form = Create_Target_Form()
+        #form = Create_Target_Form()
+        return HttpResponseRedirect('/target_assignment/create')
         
     context = {
         'form': form
@@ -144,7 +146,7 @@ def Create_Assignments_View(request):
 
 # SEND EMAIL VIEWS
 
-@login_required(login_url='/accounts/login/')
+# @login_required(login_url='/accounts/login/')
 def Send_Assign_Target_View(request):
 
     send_mail(
