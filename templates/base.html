@@ -8,30 +8,74 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css"
         href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js">
     <link rel="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js">
-    <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond|EB+Garamond|Julius+Sans+One|Muli|Quattrocento+Sans|Spinnaker&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css?family=Cormorant+Garamond|EB+Garamond|Julius+Sans+One|Muli|Quattrocento+Sans|Spinnaker&display=swap"
+        rel="stylesheet">
+
+    <!-- internal styles -->
+
+    <style>
+        body {
+            background-color: whitesmoke;
+            /* font-family: 'Cormorant Garamond', serif; */
+            font-family: 'EB Garamond', serif;
+            
+
+        }
+
+        a {
+            color:tomato;
+        }
+
+        #sidebar {
+            background-color: dimgray;
+            height: 1500px;
+        }
+
+        h1 {
+            color: dimgrey;
+            font-family: 'Julius Sans One';
+            font-size: 5em;
+
+        }
+    </style>
+
+    <!-- end internal styles -->
+
     <title>Incxosii: Mastery Micro University</title>
 </head>
 
 <body>
+    <!-- <div class=row> -->
+            <div class=row>    
+    <div class=col-2 id='sidebar'>
+        </div>
+        <div class=col-10 id='mainStage'>
+           
 
-           {% include 'nav.html' %}
+                {% include 'nav.html' %}
 
-    <div class="container">
-        <h1>Incxosii: Mastery Micro University</h1>
-        <h2>Become a Master of...</h2>
-        <p>this is the base page. aka base.html</p>
-   
+                <div class="container">
+                    <h1>Incxosii: Mastery Micro University</h1>
+                    <h2>Become a Master of...</h2>
+                    <p>this is the base page. aka base.html</p>
 
-{% block content %}
 
-{% endblock %}
+                    {% block content %}
+
+                    {% endblock %}
+                </div>
+            </div>
+        </div>
     </div>
+
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
