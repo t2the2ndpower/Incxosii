@@ -121,8 +121,8 @@ def Create_Target_View(request):
     form = Create_Target_Form(request.POST or None)
     if form.is_valid():
         form.save()
-        #form = Create_Target_Form()
-        return HttpResponseRedirect('/target_assignment/create')
+        form = Create_Target_Form()
+        #return HttpResponseRedirect('/target_assignment/create')
         
     context = {
         'form': form
@@ -199,4 +199,4 @@ class rTarget_Assignments_Relationships_ViewSet(viewsets.ModelViewSet):
 
 class rAssignment_Activity_Relationships_ViewSet(viewsets.ModelViewSet):
      queryset = rAssignment_Activity_Relationships.objects.all()
-     serializer_class = rAssignment_Activity_RelationshipsSerializer   
+     serializer_class = rAssignment_Activity_RelationshipsSerializer

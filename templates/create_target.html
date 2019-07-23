@@ -5,7 +5,7 @@
     <!-- <h2>This is the create_target.html template</h2> -->
 
 <!-- for some reason my dictionary is successully being created but the data is not being submitted to the database -->
-    <form method="POST" action='.'> {% csrf_token %}
+    <form method="POST" enctype="multipart/form-data" action='.'> {% csrf_token %}
 
        <p>{{ form.as_p }}</p> 
 
