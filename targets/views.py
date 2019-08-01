@@ -20,6 +20,9 @@ from django.http import HttpResponseRedirect
 # Email imports
 from django.core.mail import send_mail
 
+# SMS Imports
+#import targets.send_sms
+
 # Create your views here.
 
 def index_view(request, *args, **kwargs):
@@ -146,7 +149,7 @@ def Create_Assignments_View(request):
 # SEND EMAIL VIEWS
 
 # @login_required(login_url='/accounts/login/')
-def Send_Assign_Target_View(request):
+def Send_Assign_Target_View(request, sms):
 
     send_mail(
         'You have just been assigned a Target to shoot for!',
@@ -155,6 +158,9 @@ def Send_Assign_Target_View(request):
         ['technoladie@gmail.com'],
         fail_silently=False
          )
+
+    
+    #send_ms: send_sms
     return render(request, 'send/assign_target_comm.html')
 
 
